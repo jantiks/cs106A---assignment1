@@ -8,7 +8,10 @@ public class CheckerboardKarel extends SuperKarel {
 	int row = 0;
 	public void run() {
 
-        while (frontIsClear() || row == 0) {
+	    while (frontIsBlocked()) {
+	        turnLeft();
+        }
+        while (frontIsClear()) {
 
             putBeepersInOneRow();
             changeLine();
