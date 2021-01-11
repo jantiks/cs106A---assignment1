@@ -5,7 +5,7 @@
 import stanford.karel.*;
 
 public class CheckerboardKarel extends SuperKarel {
-	int row = 0;
+
 	public void run() {
 
 	    while (frontIsBlocked()) {
@@ -17,7 +17,7 @@ public class CheckerboardKarel extends SuperKarel {
             changeLine();
         }
 
-        row = 0;
+
 
     }
 
@@ -37,21 +37,19 @@ public class CheckerboardKarel extends SuperKarel {
 
     private void changeLine() {
 
-	    if (row%2==0) {
+	    if (facingEast()) {
             turnLeft();
             if (frontIsClear()) {
                 move();
                 turnLeft();
             }
 
-            row++;
         } else {
             turnRight();
             if (frontIsClear()) {
                 move();
                 turnRight();
             }
-            row++;
         }
 
     }
